@@ -483,13 +483,13 @@
 
           const faceMatrix = multiply(
             translate(start.x, start.y, 0),
-            multiply(basis, rotateX(fold * foldAngle))
+            multiply(basis, rotateX(-fold * foldAngle))
           );
 
           const triangle = [
             point3(0, 0, 0),
             point3(sideLength, 0, 0),
-            point3(sideLength * 0.5, slantHeight, 0),
+            point3(sideLength * 0.5, -slantHeight, 0),
           ];
 
           faces.push({

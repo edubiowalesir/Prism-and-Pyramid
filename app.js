@@ -513,11 +513,14 @@
     const radius = edgeLength / (2 * Math.sin(Math.PI / sides));
     const apothem = edgeLength / (2 * Math.tan(Math.PI / sides));
     const center = { x: edgeLength / 2, y: direction * apothem };
-    const startAngle = direction === -1 ? Math.PI + Math.PI / sides : -Math.PI / sides;
+    const startAngle =
+      direction === -1
+        ? Math.PI / 2 + Math.PI / sides
+        : -Math.PI / 2 - Math.PI / sides;
     const points = [];
 
     for (let i = 0; i < sides; i += 1) {
-      const angle = startAngle - (Math.PI * 2 * i) / sides;
+      const angle = startAngle + (direction * Math.PI * 2 * i) / sides;
       points.push(
         point3(
           center.x + radius * Math.cos(angle),

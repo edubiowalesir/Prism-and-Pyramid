@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade 4 Shapes Fold and Unfold Activity</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Class 4 Math Activity</p>
+        <h1>Prisms and Pyramids</h1>
+        <p class="hero-copy">
+          Fold and unfold each solid, rotate it, and compare the prism family
+          with the pyramid family just like a classroom chart.
+        </p>
+      </header>
+
+      <main class="layout">
+        <section class="viewer-panel">
+          <div class="panel-head">
+            <div>
+              <p class="panel-label" id="shapeTypeLabel">Prism Family</p>
+              <h2 id="shapeTitle">Triangular Prism</h2>
+            </div>
+            <button class="ghost-button" id="resetViewButton" type="button">
+              Reset View
+            </button>
+          </div>
+
+          <div class="stage-wrap">
+            <svg
+              id="shapeStage"
+              class="shape-stage"
+              viewBox="0 0 1000 700"
+              aria-label="Interactive 3D folding shape viewer"
+            ></svg>
+          </div>
+
+          <div class="controls">
+            <div class="slider-block">
+              <label for="foldSlider">Fold Level</label>
+              <input
+                id="foldSlider"
+                type="range"
+                min="0"
+                max="100"
+                step="1"
+                value="100"
+              />
+              <div class="slider-scale">
+                <span>Open Net</span>
+                <span>Half Fold</span>
+                <span>Solid Shape</span>
+              </div>
+            </div>
+
+            <div class="quick-actions">
+              <button type="button" data-fold="0">Open Net</button>
+              <button type="button" data-fold="50">Half Fold</button>
+              <button type="button" data-fold="100">Make Solid</button>
+            </div>
+
+            <div class="teaching-strip">
+              <span><strong>Face</strong> flat surface</span>
+              <span><strong>Edge</strong> line where faces meet</span>
+              <span><strong>Vertex</strong> corner point</span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="info-panel">
+          <section class="shape-picker">
+            <div class="picker-group prism-group">
+              <h3>Prisms</h3>
+              <p class="group-note">Blue solids with two matching bases</p>
+              <div class="picker-grid" id="prismButtons"></div>
+            </div>
+            <div class="picker-group pyramid-group">
+              <h3>Pyramids</h3>
+              <p class="group-note">Pink solids with one base and one apex</p>
+              <div class="picker-grid" id="pyramidButtons"></div>
+            </div>
+          </section>
+
+          <section class="fact-card">
+            <h3>Shape Facts</h3>
+            <div class="fact-grid">
+              <div>
+                <span class="fact-label">Faces</span>
+                <strong id="facesCount">0</strong>
+              </div>
+              <div>
+                <span class="fact-label">Edges</span>
+                <strong id="edgesCount">0</strong>
+              </div>
+              <div>
+                <span class="fact-label">Vertices</span>
+                <strong id="verticesCount">0</strong>
+              </div>
+              <div>
+                <span class="fact-label">Net Type</span>
+                <strong id="netType">-</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="teaching-card">
+            <h3>Classroom Talk Prompts</h3>
+            <ul id="promptList"></ul>
+          </section>
+
+          <section class="hint-card">
+            <h3>How Students Use It</h3>
+            <p>
+              Move the slider from left to right to watch flat faces fold into a
+              solid. Drag on the shape to turn it and look for faces, edges, and
+              vertices.
+            </p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
